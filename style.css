@@ -1,0 +1,187 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.logo img {
+  filter: invert();
+  width: 50px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 11%;
+  z-index: 1000;
+}
+
+
+.nav-link li {
+  display: inline-block;
+  padding: 0 25px;
+}
+
+.nav-link li a {
+  text-decoration: none;
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.search {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search button {
+  background: transparent;
+  filter: invert();
+  border: none;
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  height: 100vh;
+  flex: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: flex 0.4s cubic-bezier(0.68, -0.55, 0.27, 1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 6px 6px rgba(0, 0, 0, 0.33);
+  position: relative;
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 0.9) 100%);
+  z-index: 1;
+}
+
+.box.active {
+  flex: 1.3;
+}
+
+.box1 {
+  background-color: #ff2229;
+}
+
+.box2 {
+  background-color: #9721ff;
+}
+
+.box3 {
+  background-color: #1c99ff;
+}
+
+.box4 {
+  background-color: #28ff4c;
+}
+
+.box h1 {
+  position: absolute;
+  z-index: 2;
+  font-family: 'Chillax', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  user-select: none;
+  white-space: nowrap;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: font-size 0.5s cubic-bezier(0.68, -0.55, 0.27, 1), transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1);
+}
+
+.box.active h1 {
+  font-size: 7rem;
+}
+
+.shoe {
+  cursor: pointer;
+  width: 350px;
+  filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.4));
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1);
+}
+
+.shoe1 {
+  left: 40%;
+  width: 370px;
+  transform: translate(-50%, -50%) scaleX(-1) rotate(40deg);
+}
+
+.shoe2 {
+  left: 40%;
+  width: 360px;
+  transform: translate(-50%, -50%) scaleX(-1) rotate(40deg);
+}
+
+.shoe3 {
+  left: 40%;
+  transform: translate(-50%, -50%) scaleX(-1) rotate(40deg);
+}
+
+.shoe4 {
+  left: 45%;
+  transform: translate(-50%, -50%) scaleX(-1) rotate(40deg);
+}
+
+.box.active .shoe1 {
+  transform: translate(-35%, -50%) scaleX(-1) rotate(5deg) scale(1.5);
+}
+
+.box.active .shoe2 {
+  transform: translate(-35%, -50%) scaleX(-1) rotate(0deg) scale(1.5);
+}
+
+.box.active .shoe3 {
+  transform: translate(-35%, -50%) scaleX(-1) rotate(-2deg) scale(1.5);
+}
+
+.box.active .shoe4 {
+  transform: translate(-40%, -50%) scaleX(-1) rotate(0deg) scale(1.5);
+}
+
+.box.inactive .shoe {
+  transform: translate(-50%, -50%) scaleX(-1) rotate(40deg) scale(0.8);
+}
+
+.box.inactive h1 {
+  transform: translate(-50%, -50%) scale(0.7);
+}

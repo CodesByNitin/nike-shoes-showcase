@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=chillax@700&display=swap" rel="stylesheet">
+
+<body>
+    <header>
+        <a class="logo" href="#">
+            <img src="Icon/nike.png" alt="Nike">
+        </a>
+        <ul class="nav-link">
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">Kids</a></li>
+            <li><a href="#">Sale</a></li>
+        </ul>
+        <div class="search">
+            <button class="search-btn"><a href="#"><img src="Icon/search-interface-symbol.png"
+                        width="25px"></a></button>
+            <button class="cart-btn"><a href="#"><img src="Icon/shopping-cart.png" width="25px"></a></button>
+        </div>
+    </header>
+
+    <div class="box box1">
+        <img class="shoe shoe1" src="shoes/jordan 1.png">
+        <h1>JORDAN 1</h1>
+    </div>
+    <div class="box box2">
+        <img class="shoe shoe2" src="shoes/jordan 4.png">
+        <h1>JORDAN 4</h1>
+    </div>
+    <div class="box box3">
+        <img class="shoe shoe3" src="shoes/jordan 11.png">
+        <h1>JORDAN 11</h1>
+    </div>
+    <div class="box box4">
+        <img class="shoe shoe4" src="shoes/airmax plus.png">
+        <h1>AIRMAX +</h1>
+    </div>
+
+    <script>
+    const boxes = document.querySelectorAll('.box');
+
+    boxes.forEach(box => {
+        box.addEventListener('click', () => {
+            removeSpecialClasses();
+            // Add 'active' to the clicked box and 'inactive' to others
+            box.classList.add('active');
+
+            boxes.forEach(otherBox => {
+                if (otherBox !== box) {
+                    otherBox.classList.add('inactive');
+                }
+            });
+        });
+    });
+
+    function removeSpecialClasses() {
+        boxes.forEach(box => {
+            box.classList.remove('active', 'inactive');
+        });
+    }
+</script>
+</body>
+
+</html>
