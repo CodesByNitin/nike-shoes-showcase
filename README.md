@@ -43,7 +43,7 @@ Nike-Shoes-Animation/
 
 ## 📸 Preview
 
-![Screenshot1](/screenshots/ss1.png>)
+![Screenshot1](</screenshots/ss1.png>)
 ![Screenshot2](</screenshots/ss2.png>)
 
 ---
